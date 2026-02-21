@@ -3,7 +3,7 @@ const Footer = () => {
     <footer className="bg-background border-t border-border px-6 md:px-12 py-8">
       <div className="flex flex-col md:flex-row items-center justify-between gap-4">
         <span className="font-serif font-black text-foreground text-lg tracking-[-0.05em] uppercase">
-          EN LA BLANCA
+          BLANCA
         </span>
         <div className="flex gap-8">
           <a
