@@ -64,7 +64,7 @@ const Hero = () => {
           
           <h1 className="font-serif font-black text-[14vw] md:text-[9vw] lg:text-[8vw] leading-[0.82] tracking-[-0.04em] text-foreground uppercase opacity-0 animate-fade-in" style={{ animationDelay: "0.2s" }}>
             APLASTADA<br />
-            <span className="text-primary" style={{ WebkitTextStroke: "1px white" }}>HASTA LA</span><br />
+            <span className="text-primary">HASTA LA</span><br />
             PERFECCIÓN
           </h1>
           
