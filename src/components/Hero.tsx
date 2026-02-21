@@ -63,7 +63,7 @@ const Hero = () => {
 
       {/* Content — centered */}
       <div className="relative z-10 w-full flex flex-col items-center justify-center min-h-screen px-6">
-        <h1 className="font-serif font-black text-[22vw] md:text-[14vw] lg:text-[12vw] leading-[0.85] tracking-[-0.04em] text-foreground uppercase text-center opacity-0 animate-fade-in" style={{ animationDelay: "0.2s" }}>
+        <h1 className="font-serif font-normal text-[22vw] md:text-[14vw] lg:text-[12vw] leading-[0.85] tracking-[0.05em] text-foreground uppercase text-center opacity-0 animate-fade-in" style={{ animationDelay: "0.2s" }}>
           BLANCA
         </h1>
         
