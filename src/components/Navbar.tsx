@@ -7,7 +7,6 @@ const Navbar = () => {
     { label: "INICIO", href: "#hero" },
     { label: "TÉCNICA", href: "#tecnica" },
     { label: "MENÚ", href: "#menu" },
-    { label: "GALERÍA", href: "#social" },
     { label: "CONTACTO", href: "#contacto" },
   ];
 
