@@ -54,7 +54,7 @@ const Hero = () => {
 
       {/* Stamp "ETAPA 1" */}
       <div className="absolute top-28 md:top-32 left-1/2 -translate-x-1/2 z-20 opacity-0 animate-fade-in">
-        <div className="border-2 border-foreground/60 rounded-full px-6 py-2 rotate-[-8deg]">
+        <div className="border-2 border-foreground/60 rounded-full px-6 py-2">
           <p className="text-[10px] tracking-[0.5em] text-foreground/80 font-sans font-bold">
             ETAPA 1
           </p>
@@ -63,7 +63,7 @@ const Hero = () => {
 
       {/* Content — centered */}
       <div className="relative z-10 w-full flex flex-col items-center justify-center min-h-screen px-6">
-        <h1 className="font-serif font-normal text-[22vw] md:text-[14vw] lg:text-[12vw] leading-[0.85] tracking-[0.05em] text-foreground uppercase text-center opacity-0 animate-fade-in" style={{ animationDelay: "0.2s" }}>
+        <h1 className="font-serif font-normal text-[22vw] md:text-[14vw] lg:text-[12vw] leading-[0.85] tracking-[-0.08em] text-foreground uppercase text-center opacity-0 animate-fade-in" style={{ animationDelay: "0.2s" }}>
           BLANCA
         </h1>
         
