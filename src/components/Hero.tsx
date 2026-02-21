@@ -52,36 +52,38 @@ const Hero = () => {
         backgroundSize: "20px 20px"
       }} />
 
-      {/* Content */}
-      <div className="relative z-10 w-full px-6 md:px-12 pb-16 md:pb-24">
-        <div className="max-w-[90vw]">
-          {/* Decorative tag */}
-          <div className="inline-block border border-foreground/30 px-4 py-1 mb-6 opacity-0 animate-fade-in">
-            <p className="text-[10px] tracking-[0.5em] text-foreground/70 font-sans font-medium">
-              SMASH BURGER HOUSE — QUITO, EC
-            </p>
-          </div>
-          
-          <h1 className="font-serif font-black text-[14vw] md:text-[9vw] lg:text-[8vw] leading-[0.82] tracking-[-0.04em] text-foreground uppercase opacity-0 animate-fade-in" style={{ animationDelay: "0.2s" }}>
-            APLASTADA<br />
-            <span className="text-primary">HASTA LA</span><br />
-            PERFECCIÓN
-          </h1>
-          
-          <div className="mt-8 flex flex-col sm:flex-row gap-4 opacity-0 animate-fade-in" style={{ animationDelay: "0.5s" }}>
-            <Link
-              to="/menu"
-              className="inline-block border-2 border-foreground bg-foreground text-background px-8 py-4 text-xs tracking-[0.3em] font-sans font-semibold cta-blink transition-all duration-200"
-            >
-              VER MENÚ
-            </Link>
-            <a
-              href="#contacto"
-              className="inline-block border-2 border-foreground px-8 py-4 text-xs tracking-[0.3em] font-sans font-semibold text-foreground transition-all duration-200 hover:bg-foreground hover:text-background"
-            >
-              ENCUÉNTRANOS
-            </a>
-          </div>
+      {/* Stamp "ETAPA 1" */}
+      <div className="absolute top-28 md:top-32 left-1/2 -translate-x-1/2 z-20 opacity-0 animate-fade-in">
+        <div className="border-2 border-foreground/60 rounded-full px-6 py-2 rotate-[-8deg]">
+          <p className="text-[10px] tracking-[0.5em] text-foreground/80 font-sans font-bold">
+            ETAPA 1
+          </p>
+        </div>
+      </div>
+
+      {/* Content — centered */}
+      <div className="relative z-10 w-full flex flex-col items-center justify-center min-h-screen px-6">
+        <h1 className="font-serif font-black text-[22vw] md:text-[14vw] lg:text-[12vw] leading-[0.85] tracking-[-0.04em] text-foreground uppercase text-center opacity-0 animate-fade-in" style={{ animationDelay: "0.2s" }}>
+          BLANCA
+        </h1>
+        
+        <p className="text-[10px] md:text-xs tracking-[0.5em] text-foreground/70 font-sans font-medium mt-4 opacity-0 animate-fade-in" style={{ animationDelay: "0.4s" }}>
+          SMASH BURGER HOUSE — QUITO, EC
+        </p>
+
+        <div className="mt-10 flex flex-col sm:flex-row gap-4 opacity-0 animate-fade-in" style={{ animationDelay: "0.6s" }}>
+          <Link
+            to="/menu"
+            className="inline-block border-2 border-foreground bg-foreground text-background px-8 py-4 text-xs tracking-[0.3em] font-sans font-semibold cta-blink transition-all duration-200"
+          >
+            VER MENÚ
+          </Link>
+          <a
+            href="#contacto"
+            className="inline-block border-2 border-foreground px-8 py-4 text-xs tracking-[0.3em] font-sans font-semibold text-foreground transition-all duration-200 hover:bg-foreground hover:text-background"
+          >
+            ENCUÉNTRANOS
+          </a>
         </div>
       </div>
 

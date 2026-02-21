@@ -56,6 +56,20 @@ const Technique = () => {
                 className="w-full aspect-square object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
               />
             </div>
+            {/* Hand-drawn doodles overlay */}
+            <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+              {/* Scribble circle */}
+              <circle cx="320" cy="80" r="35" stroke="white" strokeWidth="2" strokeDasharray="6 4" opacity="0.7" />
+              <circle cx="320" cy="80" r="28" stroke="white" strokeWidth="1.5" opacity="0.5" />
+              {/* Arrow pointing down */}
+              <path d="M60 30 L60 100 L45 80 M60 100 L75 80" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" opacity="0.6" />
+              {/* Cross / tachón */}
+              <path d="M300 300 L360 360 M360 300 L300 360" stroke="white" strokeWidth="3" strokeLinecap="round" opacity="0.5" />
+              {/* Squiggly underline */}
+              <path d="M40 350 Q80 330 120 350 Q160 370 200 350 Q240 330 280 350" stroke="white" strokeWidth="2" fill="none" strokeLinecap="round" opacity="0.5" />
+              {/* Star */}
+              <path d="M180 50 L185 65 L200 65 L188 75 L193 90 L180 80 L167 90 L172 75 L160 65 L175 65 Z" stroke="white" strokeWidth="1.5" fill="none" opacity="0.6" />
+            </svg>
             {/* Corner brackets */}
             <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-foreground/30" />
             <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-foreground/30" />
@@ -89,6 +103,18 @@ const Technique = () => {
               alt="Melted cheese detail"
               className="w-full aspect-[3/4] object-cover group-hover:scale-105 transition-transform duration-700"
             />
+            {/* Hand-drawn doodles overlay */}
+            <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 300 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+              {/* Tachón / X marks */}
+              <path d="M30 30 L70 70 M70 30 L30 70" stroke="white" strokeWidth="2.5" strokeLinecap="round" opacity="0.6" />
+              {/* Scribble lines */}
+              <path d="M200 20 Q220 40 200 60 Q180 80 200 100" stroke="white" strokeWidth="1.5" fill="none" strokeLinecap="round" opacity="0.5" />
+              {/* Circle with exclamation */}
+              <circle cx="250" cy="320" r="25" stroke="white" strokeWidth="2" opacity="0.6" />
+              <path d="M250 305 L250 325 M250 332 L250 335" stroke="white" strokeWidth="2.5" strokeLinecap="round" opacity="0.6" />
+              {/* Zigzag */}
+              <path d="M20 350 L40 330 L60 350 L80 330 L100 350" stroke="white" strokeWidth="2" fill="none" strokeLinecap="round" opacity="0.4" />
+            </svg>
             {/* Frame overlay */}
             <div className="absolute inset-2 border border-foreground/20 pointer-events-none" />
             <div className="absolute top-4 right-4 text-[10px] tracking-[0.3em] text-foreground/40 font-sans">
