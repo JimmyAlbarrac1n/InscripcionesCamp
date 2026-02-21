@@ -11,7 +11,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 mix-blend-difference">
+    <nav className="fixed top-0 left-0 w-full z-50">
       <div className="flex items-center justify-between px-6 md:px-12 py-6">
         <a href="#hero" className="font-serif font-black text-foreground text-2xl tracking-[-0.05em] uppercase">
           BLANCA

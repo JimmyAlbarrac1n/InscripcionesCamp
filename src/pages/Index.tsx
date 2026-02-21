@@ -15,7 +15,7 @@ const Index = () => {
       <Hero />
       <Marquee text="SMASHED TO PERFECTION" />
       <Technique />
-      <Marquee text="CARNE · FUEGO · QUESO · RITUAL" reverse />
+      <Marquee text="CARNE · FUEGO · QUESO · RITUAL" reverse dark />
       <MenuSection />
       <Contact />
       <Footer />

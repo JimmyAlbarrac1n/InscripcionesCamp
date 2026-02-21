@@ -51,43 +51,47 @@ const MenuSection = () => {
   };
 
   return (
-    <section id="menu" className="relative bg-background py-24 md:py-32">
-      <div className="px-6 md:px-12">
+    <section id="menu" className="relative bg-foreground py-24 md:py-32 overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute top-0 right-0 w-1/3 h-full bg-background/5 pointer-events-none" />
+      <div className="absolute -bottom-10 -left-10 w-40 h-40 border-4 border-background/10 rounded-full pointer-events-none animate-float" />
+
+      <div className="px-6 md:px-12 relative z-10">
         <div className="flex items-end justify-between mb-16">
           <div>
-            <p className="text-xs tracking-[0.5em] text-primary font-sans font-medium mb-4">CARTA</p>
-            <h2 className="font-serif font-black text-[10vw] md:text-[5vw] leading-[0.85] tracking-[-0.04em] text-foreground uppercase">
+            <p className="text-xs tracking-[0.5em] text-background font-sans font-medium mb-4">CARTA</p>
+            <h2 className="font-serif font-black text-[10vw] md:text-[5vw] leading-[0.85] tracking-[-0.04em] text-background uppercase">
               MENÚ
             </h2>
           </div>
-          <span className="text-muted-foreground text-xs tracking-[0.3em] font-sans hidden md:block">
+          <span className="text-background/50 text-xs tracking-[0.3em] font-sans hidden md:block">
             PRECIOS EN USD · NO INCLUYEN PAPAS
           </span>
         </div>
 
         {/* Burgers */}
-        <div className="border-t border-border" onMouseMove={handleMouseMove}>
+        <div className="border-t border-background/20" onMouseMove={handleMouseMove}>
           {burgerItems.map((item, i) => (
             <div
               key={item.name}
-              className="group border-b border-border py-6 md:py-8 flex items-center justify-between cursor-pointer hover-glitch"
+              className="group border-b border-background/20 py-6 md:py-8 flex items-center justify-between cursor-pointer hover-glitch"
               onMouseEnter={() => setHoveredIndex(i)}
               onMouseLeave={() => setHoveredIndex(null)}
             >
               <div className="flex items-baseline gap-4 md:gap-8">
-                <span className="text-muted-foreground text-xs font-sans tracking-[0.2em]">
+                <span className="text-background/30 text-xs font-sans tracking-[0.2em]">
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <div>
-                  <h3 className="font-serif font-black text-2xl md:text-4xl tracking-[-0.02em] text-foreground uppercase group-hover:text-primary transition-colors duration-200">
+                  <h3 className="font-serif font-black text-2xl md:text-4xl tracking-[-0.02em] text-background uppercase group-hover:text-background/60 transition-colors duration-200">
                     {item.name}
                   </h3>
-                  <p className="text-muted-foreground text-xs md:text-sm font-sans mt-1 tracking-wide">
+                  <p className="text-background/50 text-xs md:text-sm font-sans mt-1 tracking-wide">
                     {item.desc}
                   </p>
                 </div>
               </div>
-              <span className="font-serif font-bold text-xl md:text-2xl text-foreground group-hover:text-primary transition-colors">
+              <span className="font-serif font-bold text-xl md:text-2xl text-background group-hover:text-background/60 transition-colors">
                 {item.price}
               </span>
             </div>
@@ -96,17 +100,17 @@ const MenuSection = () => {
 
         {/* Acompañamientos */}
         <div className="mt-16">
-          <p className="text-xs tracking-[0.5em] text-primary font-sans font-medium mb-8">ACOMPAÑAMIENTOS</p>
-          <div className="border-t border-border">
+          <p className="text-xs tracking-[0.5em] text-background font-sans font-medium mb-8">ACOMPAÑAMIENTOS</p>
+          <div className="border-t border-background/20">
             {sides.map((item) => (
-              <div key={item.name} className="group border-b border-border py-6 flex items-center justify-between">
+              <div key={item.name} className="group border-b border-background/20 py-6 flex items-center justify-between">
                 <div>
-                  <h3 className="font-serif font-black text-xl md:text-2xl tracking-[-0.02em] text-foreground uppercase group-hover:text-primary transition-colors duration-200">
+                  <h3 className="font-serif font-black text-xl md:text-2xl tracking-[-0.02em] text-background uppercase group-hover:text-background/60 transition-colors duration-200">
                     {item.name}
                   </h3>
-                  <p className="text-muted-foreground text-xs font-sans mt-1 tracking-wide">{item.desc}</p>
+                  <p className="text-background/50 text-xs font-sans mt-1 tracking-wide">{item.desc}</p>
                 </div>
-                <span className="font-serif font-bold text-lg md:text-xl text-foreground group-hover:text-primary transition-colors">
+                <span className="font-serif font-bold text-lg md:text-xl text-background group-hover:text-background/60 transition-colors">
                   {item.price}
                 </span>
               </div>
@@ -116,14 +120,14 @@ const MenuSection = () => {
 
         {/* Bebidas */}
         <div className="mt-16">
-          <p className="text-xs tracking-[0.5em] text-primary font-sans font-medium mb-8">BEBIDAS</p>
-          <div className="border-t border-border">
+          <p className="text-xs tracking-[0.5em] text-background font-sans font-medium mb-8">BEBIDAS</p>
+          <div className="border-t border-background/20">
             {drinks.map((item) => (
-              <div key={item.name} className="group border-b border-border py-4 flex items-center justify-between">
-                <h3 className="font-sans font-medium text-base md:text-lg tracking-wide text-foreground uppercase group-hover:text-primary transition-colors duration-200">
+              <div key={item.name} className="group border-b border-background/20 py-4 flex items-center justify-between">
+                <h3 className="font-sans font-medium text-base md:text-lg tracking-wide text-background uppercase group-hover:text-background/60 transition-colors duration-200">
                   {item.name}
                 </h3>
-                <span className="font-serif font-bold text-base md:text-lg text-foreground group-hover:text-primary transition-colors">
+                <span className="font-serif font-bold text-base md:text-lg text-background group-hover:text-background/60 transition-colors">
                   {item.price}
                 </span>
               </div>

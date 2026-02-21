@@ -6,47 +6,47 @@
 
 @layer base {
   :root {
-    --background: 0 0% 0%;
+    --background: 0 100% 37%;
     --foreground: 0 0% 100%;
 
-    --card: 0 0% 5%;
+    --card: 0 100% 30%;
     --card-foreground: 0 0% 100%;
 
-    --popover: 0 0% 5%;
+    --popover: 0 100% 30%;
     --popover-foreground: 0 0% 100%;
 
-    --primary: 0 100% 37%;
+    --primary: 0 0% 0%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 0 0% 10%;
+    --secondary: 0 100% 28%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 0 0% 15%;
-    --muted-foreground: 0 0% 65%;
+    --muted: 0 100% 32%;
+    --muted-foreground: 0 0% 80%;
 
-    --accent: 40 90% 50%;
+    --accent: 45 100% 50%;
     --accent-foreground: 0 0% 0%;
 
-    --destructive: 0 84.2% 60.2%;
+    --destructive: 0 0% 0%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 20%;
-    --input: 0 0% 20%;
-    --ring: 0 100% 37%;
+    --border: 0 0% 100% / 0.2;
+    --input: 0 0% 100% / 0.2;
+    --ring: 0 0% 100%;
 
     --radius: 0rem;
 
-    --toast: 30 50% 30%;
+    --toast: 0 100% 30%;
     --mustard: 45 100% 50%;
 
-    --sidebar-background: 0 0% 5%;
+    --sidebar-background: 0 100% 30%;
     --sidebar-foreground: 0 0% 100%;
-    --sidebar-primary: 0 100% 37%;
+    --sidebar-primary: 0 0% 0%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 0 0% 15%;
+    --sidebar-accent: 0 100% 25%;
     --sidebar-accent-foreground: 0 0% 100%;
-    --sidebar-border: 0 0% 20%;
-    --sidebar-ring: 0 100% 37%;
+    --sidebar-border: 0 0% 100% / 0.2;
+    --sidebar-ring: 0 0% 100%;
 
     --font-serif: 'Playfair Display', Georgia, serif;
     --font-sans: 'Inter', system-ui, sans-serif;
@@ -116,11 +116,11 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle, hsl(0 0% 0%) 1px, transparent 1px);
+  background: radial-gradient(circle, hsl(0 0% 100%) 1px, transparent 1px);
   background-size: 4px 4px;
-  opacity: 0.15;
+  opacity: 0.1;
   pointer-events: none;
-  mix-blend-mode: multiply;
+  mix-blend-mode: overlay;
 }
 
 /* Glitch hover */
@@ -137,13 +137,13 @@
 
 /* CTA blink */
 @keyframes cta-blink {
-  0%, 100% { background-color: hsl(0 0% 100%); color: hsl(0 0% 0%); }
-  50% { background-color: hsl(0 100% 37%); color: hsl(0 0% 100%); }
+  0%, 100% { background-color: hsl(0 0% 100%); color: hsl(0 100% 37%); }
+  50% { background-color: hsl(0 0% 0%); color: hsl(0 0% 100%); }
 }
 
 .cta-blink:hover {
   animation: cta-blink 0.2s ease-in-out 3;
-  background-color: hsl(0 100% 37%) !important;
+  background-color: hsl(0 0% 0%) !important;
   color: hsl(0 0% 100%) !important;
 }
 
@@ -157,8 +157,43 @@ html {
   width: 4px;
 }
 ::-webkit-scrollbar-track {
-  background: hsl(0 0% 0%);
+  background: hsl(0 100% 37%);
 }
 ::-webkit-scrollbar-thumb {
-  background: hsl(0 100% 37%);
+  background: hsl(0 0% 0%);
+}
+
+/* Diagonal stripe decoration */
+.diagonal-stripes {
+  background: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 10px,
+    hsl(0 0% 100% / 0.05) 10px,
+    hsl(0 0% 100% / 0.05) 20px
+  );
+}
+
+/* Floating circle animation */
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(5deg); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-delay {
+  animation: float 8s ease-in-out 2s infinite;
+}
+
+/* Rotate animation */
+@keyframes spin-slow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 20s linear infinite;
 }
