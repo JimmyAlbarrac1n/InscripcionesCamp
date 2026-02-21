@@ -1,33 +1,24 @@
-import { useState } from "react";
-import menuBurger1 from "@/assets/menu-burger-1.jpg";
-import menuBurger2 from "@/assets/menu-burger-2.jpg";
-import cheeseDetail from "@/assets/cheese-detail.jpg";
-import techniqueBurger from "@/assets/technique-burger.jpg";
 
 const burgerItems = [
   {
     name: "LA SIMPLE",
     desc: "Single smash · cheddar · pickles · mostaza amarilla",
     price: "$6",
-    image: techniqueBurger,
   },
   {
     name: "LA CLÁSICA",
     desc: "Doble smash · cheddar americano · cebolla caramelizada · salsa secreta",
     price: "$8",
-    image: menuBurger1,
   },
   {
     name: "LA TOSTADA",
     desc: "Smash con bacon crujiente · queso gouda ahumado · cebolla crispy",
     price: "$9",
-    image: cheeseDetail,
   },
   {
     name: "LA SANGRE",
     desc: "Triple smash · queso pepper jack · jalapeños · salsa habanero",
     price: "$10",
-    image: menuBurger2,
   },
 ];
 
@@ -43,12 +34,6 @@ const drinks = [
 ];
 
 const MenuSection = () => {
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
-
-  const handleMouseMove = (e: React.MouseEvent) => {
-    setMousePos({ x: e.clientX, y: e.clientY });
-  };
 
   return (
     <section id="menu" className="relative py-16 md:py-24 overflow-hidden">
@@ -88,13 +73,11 @@ const MenuSection = () => {
             <div className="flex-1 h-px bg-primary/20" />
           </div>
 
-          <div className="border-t border-primary/20" onMouseMove={handleMouseMove}>
+          <div className="border-t border-primary/20">
             {burgerItems.map((item, i) => (
               <div
                 key={item.name}
-                className="group border-b border-primary/20 py-6 md:py-8 flex items-center justify-between cursor-pointer hover-glitch"
-                onMouseEnter={() => setHoveredIndex(i)}
-                onMouseLeave={() => setHoveredIndex(null)}
+                className="group border-b border-primary/20 py-6 md:py-8 flex items-center justify-between"
               >
                 <div className="flex items-baseline gap-4 md:gap-8">
                   <span className="text-foreground/20 text-xs font-sans tracking-[0.2em]">
@@ -164,23 +147,6 @@ const MenuSection = () => {
           </div>
         </div>
 
-        {/* Floating image on hover */}
-        {hoveredIndex !== null && (
-          <div
-            className="fixed pointer-events-none z-40 w-48 h-48 md:w-64 md:h-64 overflow-hidden hidden md:block"
-            style={{
-              left: mousePos.x + 20,
-              top: mousePos.y - 100,
-            }}
-          >
-            <img
-              src={burgerItems[hoveredIndex].image}
-              alt={burgerItems[hoveredIndex].name}
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-1 border border-primary/40 pointer-events-none" />
-          </div>
-        )}
       </div>
     </section>
   );
