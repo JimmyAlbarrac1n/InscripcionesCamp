@@ -5,13 +5,13 @@ import Footer from "@/components/Footer";
 
 const Menu = () => {
   return (
-    <div className="bg-foreground text-background min-h-screen">
+    <div className="bg-background text-foreground min-h-screen">
       <FilmGrain />
-      <Navbar variant="dark" />
+      <Navbar />
       <div className="pt-24">
         <MenuSection />
       </div>
-      <Footer variant="dark" />
+      <Footer />
     </div>
   );
 };
