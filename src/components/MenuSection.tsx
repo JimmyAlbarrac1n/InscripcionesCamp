@@ -32,14 +32,14 @@ const burgerItems = [
 ];
 
 const sides = [
-  { name: "PORCIÓN DE PAPAS", desc: "Papas fritas crujientes con sal y especias", price: "$5" },
+  { name: "PORCIÓN DE PAPAS", desc: "Papas fritas crujientes con sal y especias", price: "$2" },
 ];
 
 const drinks = [
-  { name: "LIMONADA", price: "$3" },
-  { name: "GASEOSA", price: "$2.50" },
-  { name: "AGUA CON GAS", price: "$2" },
+  { name: "LIMONADA", price: "$2" },
+  { name: "GASEOSA", price: "$2" },
   { name: "AGUA SIN GAS", price: "$1.50" },
+  { name: "AGUA CON GAS", price: "$1.50" },
 ];
 
 const MenuSection = () => {
