@@ -53,7 +53,7 @@ const Hero = () => {
       }} />
 
       {/* Stamp "ETAPA 1" */}
-      <div className="absolute top-28 md:top-32 left-1/2 -translate-x-1/2 z-20 opacity-0 animate-fade-in">
+      <div className="absolute top-20 right-6 md:right-12 z-20 opacity-0 animate-fade-in">
         <div className="border-2 border-foreground/60 rounded-full px-6 py-2">
           <p className="text-[10px] tracking-[0.5em] text-foreground/80 font-sans font-bold">
             ETAPA 1
