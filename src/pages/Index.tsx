@@ -4,7 +4,6 @@ import Hero from "@/components/Hero";
 import Marquee from "@/components/Marquee";
 import Technique from "@/components/Technique";
 import MenuSection from "@/components/MenuSection";
-import SocialFeed from "@/components/SocialFeed";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
@@ -18,7 +17,6 @@ const Index = () => {
       <Technique />
       <Marquee text="CARNE · FUEGO · QUESO · RITUAL" reverse />
       <MenuSection />
-      <SocialFeed />
       <Contact />
       <Footer />
     </div>

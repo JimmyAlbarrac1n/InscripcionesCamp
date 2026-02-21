@@ -4,37 +4,42 @@ import menuBurger2 from "@/assets/menu-burger-2.jpg";
 import cheeseDetail from "@/assets/cheese-detail.jpg";
 import techniqueBurger from "@/assets/technique-burger.jpg";
 
-const menuItems = [
+const burgerItems = [
   {
     name: "LA CLÁSICA",
     desc: "Doble smash · cheddar americano · cebolla caramelizada · salsa secreta",
-    price: "$149",
+    price: "$8",
     image: menuBurger1,
   },
   {
     name: "LA SANGRE",
     desc: "Triple smash · queso pepper jack · jalapeños · salsa habanero",
-    price: "$179",
+    price: "$10",
     image: menuBurger2,
   },
   {
     name: "LA TOSTADA",
     desc: "Smash con bacon crujiente · queso gouda ahumado · cebolla crispy",
-    price: "$169",
+    price: "$9",
     image: cheeseDetail,
   },
   {
     name: "LA SIMPLE",
     desc: "Single smash · cheddar · pickles · mostaza amarilla",
-    price: "$119",
+    price: "$6",
     image: techniqueBurger,
   },
-  {
-    name: "PAPAS SMASH",
-    desc: "Aplastadas y fritas · queso cheddar fundido · salsa ranch",
-    price: "$89",
-    image: menuBurger1,
-  },
+];
+
+const sides = [
+  { name: "PORCIÓN DE PAPAS", desc: "Papas fritas crujientes con sal y especias", price: "$5" },
+];
+
+const drinks = [
+  { name: "LIMONADA", price: "$3" },
+  { name: "GASEOSA", price: "$2.50" },
+  { name: "AGUA CON GAS", price: "$2" },
+  { name: "AGUA SIN GAS", price: "$1.50" },
 ];
 
 const MenuSection = () => {
@@ -56,13 +61,13 @@ const MenuSection = () => {
             </h2>
           </div>
           <span className="text-muted-foreground text-xs tracking-[0.3em] font-sans hidden md:block">
-            PRECIOS EN MXN
+            PRECIOS EN USD · NO INCLUYEN PAPAS
           </span>
         </div>
 
-        {/* Menu list */}
+        {/* Burgers */}
         <div className="border-t border-border" onMouseMove={handleMouseMove}>
-          {menuItems.map((item, i) => (
+          {burgerItems.map((item, i) => (
             <div
               key={item.name}
               className="group border-b border-border py-6 md:py-8 flex items-center justify-between cursor-pointer hover-glitch"
@@ -89,6 +94,43 @@ const MenuSection = () => {
           ))}
         </div>
 
+        {/* Acompañamientos */}
+        <div className="mt-16">
+          <p className="text-xs tracking-[0.5em] text-primary font-sans font-medium mb-8">ACOMPAÑAMIENTOS</p>
+          <div className="border-t border-border">
+            {sides.map((item) => (
+              <div key={item.name} className="group border-b border-border py-6 flex items-center justify-between">
+                <div>
+                  <h3 className="font-serif font-black text-xl md:text-2xl tracking-[-0.02em] text-foreground uppercase group-hover:text-primary transition-colors duration-200">
+                    {item.name}
+                  </h3>
+                  <p className="text-muted-foreground text-xs font-sans mt-1 tracking-wide">{item.desc}</p>
+                </div>
+                <span className="font-serif font-bold text-lg md:text-xl text-foreground group-hover:text-primary transition-colors">
+                  {item.price}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Bebidas */}
+        <div className="mt-16">
+          <p className="text-xs tracking-[0.5em] text-primary font-sans font-medium mb-8">BEBIDAS</p>
+          <div className="border-t border-border">
+            {drinks.map((item) => (
+              <div key={item.name} className="group border-b border-border py-4 flex items-center justify-between">
+                <h3 className="font-sans font-medium text-base md:text-lg tracking-wide text-foreground uppercase group-hover:text-primary transition-colors duration-200">
+                  {item.name}
+                </h3>
+                <span className="font-serif font-bold text-base md:text-lg text-foreground group-hover:text-primary transition-colors">
+                  {item.price}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+
         {/* Floating image on hover */}
         {hoveredIndex !== null && (
           <div
@@ -99,8 +141,8 @@ const MenuSection = () => {
             }}
           >
             <img
-              src={menuItems[hoveredIndex].image}
-              alt={menuItems[hoveredIndex].name}
+              src={burgerItems[hoveredIndex].image}
+              alt={burgerItems[hoveredIndex].name}
               className="w-full h-full object-cover"
             />
           </div>

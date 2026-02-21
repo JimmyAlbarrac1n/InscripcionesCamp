@@ -1,16 +1,27 @@
+import brutalistTexture from "@/assets/brutalist-texture.png";
 import heroBurger from "@/assets/hero-burger.jpg";
 
 const Hero = () => {
   return (
     <section id="hero" className="relative min-h-screen flex items-end overflow-hidden">
-      {/* Background image */}
+      {/* Brutalist texture background */}
+      <div className="absolute inset-0">
+        <img
+          src={brutalistTexture}
+          alt="Brutalist texture"
+          className="w-full h-full object-cover object-center opacity-30"
+        />
+        <div className="absolute inset-0 bg-background/40" />
+      </div>
+
+      {/* Burger image overlay */}
       <div className="absolute inset-0">
         <img
           src={heroBurger}
           alt="Smash burger macro"
-          className="w-full h-full object-cover object-center scale-110"
+          className="w-full h-full object-cover object-center scale-110 mix-blend-luminosity opacity-50"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/70 to-background/30" />
       </div>
 
       {/* Content */}
