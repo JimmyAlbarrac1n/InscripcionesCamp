@@ -1,5 +1,11 @@
 import brutalistTexture from "@/assets/brutalist-texture.png";
 import heroBurger from "@/assets/hero-burger.jpg";
+import doodle1 from "@/assets/doodle-1.png";
+import doodle2 from "@/assets/doodle-2.png";
+import doodle3 from "@/assets/doodle-3.png";
+import doodle4 from "@/assets/doodle-4.png";
+import doodle5 from "@/assets/doodle-5.png";
+import doodle6 from "@/assets/doodle-6.png";
 import { Link } from "react-router-dom";
 
 const Hero = () => {
@@ -45,6 +51,14 @@ const Hero = () => {
           B
         </span>
       </div>
+
+      {/* Doodle rayones scattered across hero */}
+      <img src={doodle1} alt="" className="absolute top-[15%] left-[8%] w-24 md:w-36 pointer-events-none z-20" />
+      <img src={doodle2} alt="" className="absolute top-[10%] right-[15%] w-20 md:w-28 pointer-events-none z-20" />
+      <img src={doodle3} alt="" className="absolute bottom-[30%] left-[20%] w-28 md:w-40 pointer-events-none z-20" />
+      <img src={doodle4} alt="" className="absolute top-[40%] right-[5%] w-16 md:w-24 pointer-events-none z-20" />
+      <img src={doodle5} alt="" className="absolute bottom-[15%] right-[25%] w-22 md:w-32 pointer-events-none z-20" />
+      <img src={doodle6} alt="" className="absolute bottom-[20%] left-[3%] w-32 md:w-44 pointer-events-none z-20" />
 
       {/* Dotted texture overlay */}
       <div className="absolute inset-0 pointer-events-none opacity-[0.03]" style={{

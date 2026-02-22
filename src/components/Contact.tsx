@@ -16,12 +16,12 @@ const Contact = () => {
       </div>
 
       {/* Doodle elements scattered */}
-      <img src={doodle1} alt="" className="absolute top-12 right-8 md:right-20 w-20 md:w-28 opacity-60 pointer-events-none" />
-      <img src={doodle2} alt="" className="absolute top-[30%] left-[3%] w-16 md:w-24 opacity-50 pointer-events-none" />
-      <img src={doodle3} alt="" className="absolute bottom-[40%] right-[5%] w-24 md:w-32 opacity-40 pointer-events-none" />
-      <img src={doodle4} alt="" className="absolute top-[50%] left-[40%] w-14 md:w-20 opacity-30 pointer-events-none" />
-      <img src={doodle5} alt="" className="absolute bottom-20 left-[10%] w-20 md:w-28 opacity-50 pointer-events-none" />
-      <img src={doodle6} alt="" className="absolute bottom-[25%] right-[20%] w-28 md:w-40 opacity-35 pointer-events-none" />
+      <img src={doodle1} alt="" className="absolute top-12 right-8 md:right-20 w-20 md:w-28 pointer-events-none z-10" />
+      <img src={doodle2} alt="" className="absolute top-[30%] left-[3%] w-16 md:w-24 pointer-events-none z-10" />
+      <img src={doodle3} alt="" className="absolute bottom-[40%] right-[5%] w-24 md:w-32 pointer-events-none z-10" />
+      <img src={doodle4} alt="" className="absolute top-[50%] left-[40%] w-14 md:w-20 pointer-events-none z-10" />
+      <img src={doodle5} alt="" className="absolute bottom-20 left-[10%] w-20 md:w-28 pointer-events-none z-10" />
+      <img src={doodle6} alt="" className="absolute bottom-[25%] right-[20%] w-28 md:w-40 pointer-events-none z-10" />
 
       {/* Decorative elements around */}
       <div className="absolute top-16 right-8 md:right-16 w-20 h-20 border border-foreground/10 rounded-full pointer-events-none animate-float hidden md:block" />
