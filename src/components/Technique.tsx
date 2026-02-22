@@ -1,5 +1,7 @@
 import techniqueBurger from "@/assets/technique-burger.jpg";
 import cheeseDetail from "@/assets/cheese-detail.jpg";
+import doodle2 from "@/assets/doodle-2.png";
+import doodle6 from "@/assets/doodle-6.png";
 
 const steps = [
   { num: "01", title: "LA BOLA", desc: "Carne fresca de res, nunca congelada. Formamos bolas de 80g que esperan su momento de gloria." },
@@ -24,6 +26,10 @@ const Technique = () => {
       <div className="absolute -right-10 top-0 pointer-events-none select-none opacity-[0.04]">
         <span className="font-serif font-black text-[50vw] text-foreground leading-none">3</span>
       </div>
+
+      {/* Doodle rayones - estilo cuaderno */}
+      <img src={doodle2} alt="" className="absolute top-[8%] right-[10%] w-32 md:w-48 pointer-events-none z-10 rotate-12" />
+      <img src={doodle6} alt="" className="absolute bottom-[15%] left-[5%] w-40 md:w-56 pointer-events-none z-10 -rotate-6" />
 
       {/* Black accent block */}
       <div className="absolute left-0 top-[20%] w-8 md:w-12 h-32 bg-primary pointer-events-none" />
