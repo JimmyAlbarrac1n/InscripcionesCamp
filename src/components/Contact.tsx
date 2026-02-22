@@ -1,3 +1,10 @@
+import doodle1 from "@/assets/doodle-1.png";
+import doodle2 from "@/assets/doodle-2.png";
+import doodle3 from "@/assets/doodle-3.png";
+import doodle4 from "@/assets/doodle-4.png";
+import doodle5 from "@/assets/doodle-5.png";
+import doodle6 from "@/assets/doodle-6.png";
+
 const Contact = () => {
   return (
     <section id="contacto" className="relative bg-background py-24 md:py-32 overflow-hidden">
@@ -8,13 +15,18 @@ const Contact = () => {
         </svg>
       </div>
 
+      {/* Doodle elements scattered */}
+      <img src={doodle1} alt="" className="absolute top-12 right-8 md:right-20 w-20 md:w-28 opacity-60 pointer-events-none" />
+      <img src={doodle2} alt="" className="absolute top-[30%] left-[3%] w-16 md:w-24 opacity-50 pointer-events-none" />
+      <img src={doodle3} alt="" className="absolute bottom-[40%] right-[5%] w-24 md:w-32 opacity-40 pointer-events-none" />
+      <img src={doodle4} alt="" className="absolute top-[50%] left-[40%] w-14 md:w-20 opacity-30 pointer-events-none" />
+      <img src={doodle5} alt="" className="absolute bottom-20 left-[10%] w-20 md:w-28 opacity-50 pointer-events-none" />
+      <img src={doodle6} alt="" className="absolute bottom-[25%] right-[20%] w-28 md:w-40 opacity-35 pointer-events-none" />
+
       {/* Decorative elements around */}
       <div className="absolute top-16 right-8 md:right-16 w-20 h-20 border border-foreground/10 rounded-full pointer-events-none animate-float hidden md:block" />
       <div className="absolute top-40 right-24 w-3 h-3 bg-foreground/10 pointer-events-none hidden md:block" />
       <div className="absolute bottom-32 left-[5%] w-32 h-32 border border-foreground/5 pointer-events-none hidden md:block" />
-      <div className="absolute bottom-16 right-[15%] pointer-events-none animate-spin-slow opacity-[0.06] hidden md:block">
-        <svg width="80" height="80" viewBox="0 0 80 80"><text x="50%" y="50%" textAnchor="middle" dominantBaseline="middle" fill="white" fontSize="50" fontFamily="serif" fontWeight="900">✦</text></svg>
-      </div>
 
       {/* Dotted texture */}
       <div className="absolute inset-0 pointer-events-none opacity-[0.02]" style={{
@@ -30,7 +42,7 @@ const Contact = () => {
               <p className="text-[10px] tracking-[0.5em] text-foreground/60 font-sans font-medium">UBICACIÓN</p>
             </div>
             <h2 className="font-serif font-black text-[10vw] md:text-[5vw] leading-[0.85] tracking-[-0.04em] text-foreground uppercase mb-12">
-              ENCUÉN­<br />TRANOS
+              ENCUÉNTRANOS
             </h2>
 
             <div className="space-y-8">
