@@ -22,3 +22,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Claude Code (config local)
+.claude/
+
+# Variables de entorno (los secretos NO se suben; en Netlify se configuran como env vars)
+.env

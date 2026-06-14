@@ -1,22 +1,19 @@
 import FilmGrain from "@/components/FilmGrain";
-import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
+import Campamentos from "@/components/Campamentos";
+import Ubicacion from "@/components/Ubicacion";
 import Marquee from "@/components/Marquee";
-import Technique from "@/components/Technique";
-import Contact from "@/components/Contact";
-import Footer from "@/components/Footer";
+import SiteFooter from "@/components/SiteFooter";
 
 const Index = () => {
   return (
-    <div className="bg-background text-foreground min-h-screen">
+    <div className="min-h-screen bg-background text-foreground">
       <FilmGrain />
-      <Navbar />
       <Hero />
-      <Marquee text="SMASHED TO PERFECTION" />
-      <Technique />
-      <Marquee text="CARNE · FUEGO · QUESO · RITUAL" reverse dark />
-      <Contact />
-      <Footer />
+      <Campamentos />
+      <Ubicacion />
+      <Marquee text="DESDE EL JOVEN · Y PARA EL JOVEN" />
+      <SiteFooter />
     </div>
   );
 };

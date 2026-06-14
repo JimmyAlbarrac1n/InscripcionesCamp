@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Poppins:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,50 +6,53 @@
 
 @layer base {
   :root {
-    --background: 0 100% 37%;
-    --foreground: 0 0% 100%;
+    /* Ecológica y vibrante (Naturaleza) — tema CLARO */
+    --background: 0 0% 100%;           /* #FFFFFF blanco puro */
+    --foreground: 138 42% 13%;         /* #122E1E verde bosque muy oscuro (texto) */
 
-    --card: 0 100% 30%;
-    --card-foreground: 0 0% 100%;
+    --card: 0 0% 100%;
+    --card-foreground: 138 42% 13%;
 
-    --popover: 0 100% 30%;
-    --popover-foreground: 0 0% 100%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 138 42% 13%;
 
-    --primary: 0 0% 0%;
-    --primary-foreground: 0 0% 100%;
+    /* Verde Bosque — color de marca / acciones */
+    --primary: 138 36% 27%;            /* #2C5E3B */
+    --primary-foreground: 0 0% 100%;   /* texto blanco sobre verde */
 
-    --secondary: 0 100% 28%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 138 30% 95%;          /* wash verde muy claro para bloques */
+    --secondary-foreground: 138 42% 16%;
 
-    --muted: 0 100% 32%;
-    --muted-foreground: 0 0% 80%;
+    --muted: 138 18% 96%;
+    --muted-foreground: 138 12% 38%;   /* gris verdoso para textos sutiles */
 
-    --accent: 45 100% 50%;
-    --accent-foreground: 0 0% 0%;
+    /* Amarillo Limón — acento vibrante */
+    --accent: 48 90% 80%;              /* #FAE89E (amarillo limón más claro) */
+    --accent-foreground: 138 45% 13%;  /* texto oscuro sobre amarillo */
 
-    --destructive: 0 0% 0%;
+    --destructive: 0 72% 48%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 100% / 0.2;
-    --input: 0 0% 100% / 0.2;
-    --ring: 0 0% 100%;
+    --border: 138 20% 88%;             /* borde verde-gris suave */
+    --input: 138 20% 88%;
+    --ring: 138 36% 27%;               /* foco en verde */
 
-    --radius: 0rem;
+    --radius: 0.75rem;
 
-    --toast: 0 100% 30%;
-    --mustard: 45 100% 50%;
+    --toast: 138 36% 27%;
+    --mustard: 48 90% 80%;
 
-    --sidebar-background: 0 100% 30%;
-    --sidebar-foreground: 0 0% 100%;
-    --sidebar-primary: 0 0% 0%;
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 138 42% 13%;
+    --sidebar-primary: 138 36% 27%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 0 100% 25%;
-    --sidebar-accent-foreground: 0 0% 100%;
-    --sidebar-border: 0 0% 100% / 0.2;
-    --sidebar-ring: 0 0% 100%;
+    --sidebar-accent: 48 90% 80%;
+    --sidebar-accent-foreground: 138 45% 13%;
+    --sidebar-border: 138 20% 88%;
+    --sidebar-ring: 138 36% 27%;
 
     --font-serif: 'Playfair Display', Georgia, serif;
-    --font-sans: 'Inter', system-ui, sans-serif;
+    --font-sans: 'Poppins', system-ui, sans-serif;
   }
 }
 
@@ -95,7 +98,7 @@
   animation: grain 8s steps(10) infinite;
   pointer-events: none;
   z-index: 9999;
-  opacity: 0.5;
+  opacity: 0.25;
 }
 
 /* Marquee */
@@ -137,14 +140,14 @@
 
 /* CTA blink */
 @keyframes cta-blink {
-  0%, 100% { background-color: hsl(0 0% 100%); color: hsl(0 100% 37%); }
-  50% { background-color: hsl(0 0% 0%); color: hsl(0 0% 100%); }
+  0%, 100% { background-color: hsl(48 90% 80%); color: hsl(138 45% 13%); }
+  50% { background-color: hsl(138 36% 27%); color: hsl(0 0% 100%); }
 }
 
 .cta-blink:hover {
   animation: cta-blink 0.2s ease-in-out 3;
-  background-color: hsl(0 0% 0%) !important;
-  color: hsl(0 0% 100%) !important;
+  background-color: hsl(48 90% 80%) !important;
+  color: hsl(138 45% 13%) !important;
 }
 
 /* Smooth scroll */
@@ -157,10 +160,10 @@ html {
   width: 4px;
 }
 ::-webkit-scrollbar-track {
-  background: hsl(0 100% 37%);
+  background: hsl(138 18% 96%);
 }
 ::-webkit-scrollbar-thumb {
-  background: hsl(0 0% 0%);
+  background: hsl(138 36% 27%);
 }
 
 /* Diagonal stripe decoration */
