@@ -12,7 +12,7 @@ const photos = campImages.slice(5);
 
 const Campamentos = () => {
   return (
-    <section id="campamentos" className="relative overflow-hidden bg-background px-6 py-20 md:py-28">
+    <section id="campamentos" className="relative overflow-hidden bg-background px-6 pt-8 pb-20 md:pt-12 md:pb-28">
       <div className="mx-auto max-w-4xl">
         {/* z-30: el título queda SIEMPRE por encima de las fotos flotantes */}
         <h2 className="relative z-30 mb-12 text-center font-serif text-4xl font-black tracking-tight text-foreground sm:text-5xl md:text-6xl">
