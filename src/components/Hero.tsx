@@ -17,7 +17,7 @@ const SLOTS = [
 const BORDER = "#C8A200";
 
 // Geometría del badge circular (SVG viewBox 300×290)
-const CX = 150, CY = 155, R = 118;
+const CX = 150, CY = 152, R = 118;
 const topArc = `M ${CX - R},${CY} A ${R},${R} 0 0,1 ${CX + R},${CY}`;
 const botArc = `M ${CX - R},${CY} A ${R},${R} 0 0,0 ${CX + R},${CY}`;
 
@@ -58,21 +58,13 @@ const Hero = () => {
         {/* Encabezado semántico oculto para SEO */}
         <h1 className="sr-only">Campamentos Vacacionales XIV Temporada — Pastoral Juvenil Cristo Rey</h1>
 
-        {/* Pastoral Juvenil Cristo Rey */}
-        <h2
-          className="font-serif text-xl font-black tracking-tight text-primary opacity-0 animate-fade-in sm:text-2xl md:text-3xl"
-          style={{ animationDelay: "0.05s" }}
-        >
-          Pastoral Juvenil Cristo Rey
-        </h2>
-
         {/* Badge circular: arco superior + logo + arco inferior */}
         <div
           className="relative my-4 flex items-center justify-center opacity-0 animate-fade-in"
           style={{ animationDelay: "0.22s" }}
         >
           {/* SVG con los dos arcos de texto */}
-          <svg viewBox="0 0 300 290" className="w-60 sm:w-64 md:w-80" aria-hidden="true">
+          <svg viewBox="0 0 300 290" className="w-72 sm:w-80 md:w-96" aria-hidden="true">
             <defs>
               <path id="hero-arc-top" d={topArc} />
               <path id="hero-arc-bot" d={botArc} />
@@ -105,10 +97,10 @@ const Hero = () => {
             </text>
           </svg>
 
-          {/* Halo amarillo detrás del logo */}
+          {/* Halo cálido exterior */}
           <div
-            className="pointer-events-none absolute h-32 w-32 rounded-full blur-xl sm:h-36 sm:w-36 md:h-44 md:w-44"
-            style={{ background: "radial-gradient(circle, hsl(48 90% 80% / 0.6), transparent 70%)" }}
+            className="pointer-events-none absolute h-48 w-48 rounded-full blur-2xl sm:h-56 sm:w-56 md:h-64 md:w-64"
+            style={{ background: "radial-gradient(circle, hsl(48 90% 80% / 0.55), transparent 70%)" }}
             aria-hidden="true"
           />
 
@@ -116,7 +108,7 @@ const Hero = () => {
           <img
             src={logo}
             alt="Escudo de la Pastoral Juvenil Cristo Rey"
-            className="absolute w-28 drop-shadow-[0_10px_24px_hsl(138_36%_27%/0.28)] sm:w-32 md:w-36"
+            className="absolute w-36 sm:w-40 md:w-48"
           />
         </div>
 
