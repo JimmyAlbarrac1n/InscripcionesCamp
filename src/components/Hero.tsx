@@ -53,22 +53,8 @@ const Hero = () => {
         className="relative z-10 flex w-full max-w-3xl flex-col items-center text-center"
         style={{ textShadow: "0 1px 14px rgba(255,255,255,0.95)" }}
       >
-        {/* Títulos grandes en dos colores */}
-        <h1
-          className="font-serif text-5xl font-black uppercase leading-[0.95] tracking-tight text-primary opacity-0 animate-fade-in sm:text-6xl md:text-7xl"
-          style={{ animationDelay: "0.05s" }}
-        >
-          Campamentos Vacacionales
-        </h1>
-        <p
-          className="mt-2 font-serif text-4xl font-black uppercase tracking-tight opacity-0 animate-fade-in sm:text-5xl md:text-6xl"
-          style={{ animationDelay: "0.18s", color: "#FFD93D", textShadow: YELLOW_OUTLINE }}
-        >
-          XIV Temporada
-        </p>
-
-        {/* Logo (más grande) con halo */}
-        <div className="relative my-7 flex items-center justify-center opacity-0 animate-fade-in" style={{ animationDelay: "0.32s" }}>
+        {/* Logo (más grande) con halo — arriba de los títulos */}
+        <div className="relative mb-6 flex items-center justify-center opacity-0 animate-fade-in" style={{ animationDelay: "0.05s" }}>
           <div
             className="absolute h-[135%] w-[135%] rounded-full blur-2xl"
             style={{ background: "radial-gradient(circle, hsl(48 90% 80% / 0.7), transparent 65%)" }}
@@ -79,6 +65,20 @@ const Hero = () => {
             className="relative w-52 drop-shadow-[0_14px_28px_hsl(138_36%_27%/0.3)] sm:w-64 md:w-72"
           />
         </div>
+
+        {/* Títulos grandes en dos colores */}
+        <h1
+          className="font-serif text-5xl font-extrabold uppercase leading-[0.95] tracking-tight text-primary opacity-0 animate-fade-in sm:text-6xl md:text-7xl"
+          style={{ animationDelay: "0.2s" }}
+        >
+          Campamentos Vacacionales
+        </h1>
+        <p
+          className="mt-2 font-serif text-4xl font-extrabold uppercase tracking-tight opacity-0 animate-fade-in sm:text-5xl md:text-6xl"
+          style={{ animationDelay: "0.32s", color: "#FFD93D", textShadow: YELLOW_OUTLINE }}
+        >
+          XIV Temporada
+        </p>
 
         {/* Lema */}
         <p className="font-serif text-lg italic text-primary/85 opacity-0 animate-fade-in sm:text-xl" style={{ animationDelay: "0.45s" }}>
@@ -93,10 +93,10 @@ const Hero = () => {
 
         {/* CTA principal resaltado */}
         <div className="relative mt-8 opacity-0 animate-fade-in" style={{ animationDelay: "0.7s" }}>
-          <div className="pointer-events-none absolute -inset-2.5 rounded-full bg-accent/50 blur-xl" aria-hidden="true" />
+          <div className="pointer-events-none absolute -inset-1 rounded-full bg-accent/40 blur-md" aria-hidden="true" />
           <Link
             to="/inscripcion"
-            className="group relative inline-flex items-center gap-3 rounded-full bg-primary px-12 py-5 text-lg font-bold tracking-wide text-primary-foreground shadow-[0_20px_45px_-12px_hsl(138_36%_27%/0.85)] ring-2 ring-accent/60 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_28px_55px_-10px_hsl(138_36%_27%/0.95)]"
+            className="group relative inline-flex items-center gap-3 rounded-full bg-primary px-12 py-5 text-lg font-bold tracking-wide text-primary-foreground shadow-[0_10px_22px_-10px_hsl(138_36%_27%/0.7)] ring-2 ring-accent/60 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_14px_28px_-10px_hsl(138_36%_27%/0.8)]"
           >
             Quiero Inscribirme
             <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
