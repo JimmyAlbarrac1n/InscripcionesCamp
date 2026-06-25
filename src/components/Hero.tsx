@@ -3,21 +3,23 @@ import { ArrowRight } from "lucide-react";
 import logo from "@/assets/logo.png";
 import { campImages } from "@/lib/campImages";
 
-// El hero usa las primeras 5 fotos (el resto se reparten en otras secciones).
 const heroImages = campImages.slice(0, 5);
 
-// Posiciones de las fotos flotantes (en los bordes, lejos del texto central). Todas claras.
 const SLOTS = [
-  { c: "left-[1%] top-[6%]", w: "w-28 sm:w-36 md:w-48", a: "aspect-[3/4]", r: "-7deg", f: "animate-float", d: "0.2s" },
-  { c: "right-[1%] top-[5%]", w: "w-24 sm:w-32 md:w-40", a: "aspect-square", r: "6deg", f: "animate-float-delay", d: "0.35s" },
-  { c: "left-[2%] top-[46%]", w: "w-20 sm:w-24 md:w-32", a: "aspect-[4/5]", r: "5deg", f: "animate-float-delay", d: "0.5s" },
-  { c: "right-[1%] bottom-[12%]", w: "w-24 sm:w-32 md:w-44", a: "aspect-[3/4]", r: "-6deg", f: "animate-float", d: "0.45s" },
-  { c: "left-[4%] bottom-[6%]", w: "w-24 sm:w-32 md:w-40", a: "aspect-square", r: "7deg", f: "animate-float-delay", d: "0.6s" },
+  { c: "left-[1%] top-[6%]",    w: "w-28 sm:w-36 md:w-48", a: "aspect-[3/4]",  r: "-7deg", f: "animate-float",       d: "0.2s"  },
+  { c: "right-[1%] top-[5%]",   w: "w-24 sm:w-32 md:w-40", a: "aspect-square", r: "6deg",  f: "animate-float-delay", d: "0.35s" },
+  { c: "left-[2%] top-[46%]",   w: "w-20 sm:w-24 md:w-32", a: "aspect-[4/5]",  r: "5deg",  f: "animate-float-delay", d: "0.5s"  },
+  { c: "right-[1%] bottom-[12%]",w: "w-24 sm:w-32 md:w-44", a: "aspect-[3/4]", r: "-6deg", f: "animate-float",       d: "0.45s" },
+  { c: "left-[4%] bottom-[6%]", w: "w-24 sm:w-32 md:w-40", a: "aspect-square", r: "7deg",  f: "animate-float-delay", d: "0.6s"  },
 ];
 
-// Contorno amarillo (+ leve halo blanco) para que los títulos resalten.
-const TITLE_SHADOW =
-  "1px 1px 0 #FFD93D, -1px 1px 0 #FFD93D, 1px -1px 0 #FFD93D, -1px -1px 0 #FFD93D, 2px 0 0 #FFD93D, -2px 0 0 #FFD93D, 0 2px 0 #FFD93D, 0 -2px 0 #FFD93D, 0 3px 14px rgba(255,255,255,0.85)";
+// Ámbar oscuro — menos llamativo que el amarillo brillante anterior
+const BORDER = "#C8A200";
+
+// Geometría del badge circular (SVG viewBox 300×290)
+const CX = 150, CY = 155, R = 118;
+const topArc = `M ${CX - R},${CY} A ${R},${R} 0 0,1 ${CX + R},${CY}`;
+const botArc = `M ${CX - R},${CY} A ${R},${R} 0 0,0 ${CX + R},${CY}`;
 
 const Hero = () => {
   return (
@@ -25,7 +27,7 @@ const Hero = () => {
       id="hero"
       className="relative flex min-h-[80vh] flex-col items-center justify-center overflow-hidden bg-background px-6 py-10"
     >
-      {/* ===== Fotos flotantes (claras, sin difuminado) ===== */}
+      {/* Fotos flotantes */}
       <div className="pointer-events-none absolute inset-0 z-0" aria-hidden="true">
         {heroImages.map((src, i) => {
           const s = SLOTS[i];
@@ -48,55 +50,94 @@ const Hero = () => {
       <div className="pointer-events-none absolute left-5 top-5 z-10 hidden h-10 w-10 border-l-2 border-t-2 border-primary/25 md:block" />
       <div className="pointer-events-none absolute bottom-5 right-5 z-10 hidden h-10 w-10 border-b-2 border-r-2 border-primary/25 md:block" />
 
-      {/* ===== Contenido (centrado) ===== */}
+      {/* Contenido */}
       <div
         className="relative z-10 flex w-full max-w-2xl flex-col items-center text-center"
         style={{ textShadow: "0 1px 14px rgba(255,255,255,0.95)" }}
       >
-        {/* Pastoral Juvenil — más pequeño que los títulos */}
-        <h2 className="font-serif text-xl font-black tracking-tight text-primary opacity-0 animate-fade-in sm:text-2xl md:text-3xl" style={{ animationDelay: "0.05s" }}>
+        {/* Encabezado semántico oculto para SEO */}
+        <h1 className="sr-only">Campamentos Vacacionales XIV Temporada — Pastoral Juvenil Cristo Rey</h1>
+
+        {/* Pastoral Juvenil Cristo Rey */}
+        <h2
+          className="font-serif text-xl font-black tracking-tight text-primary opacity-0 animate-fade-in sm:text-2xl md:text-3xl"
+          style={{ animationDelay: "0.05s" }}
+        >
           Pastoral Juvenil Cristo Rey
         </h2>
 
-        {/* Títulos principales con borde amarillo */}
-        <h1
-          className="mt-2 font-serif text-4xl font-black uppercase leading-[0.95] tracking-tight text-primary opacity-0 animate-fade-in sm:text-5xl md:text-6xl"
-          style={{ animationDelay: "0.18s", textShadow: TITLE_SHADOW }}
+        {/* Badge circular: arco superior + logo + arco inferior */}
+        <div
+          className="relative my-4 flex items-center justify-center opacity-0 animate-fade-in"
+          style={{ animationDelay: "0.22s" }}
         >
-          Campamentos Vacacionales
-        </h1>
-        <p
-          className="mt-1 font-serif text-3xl font-black uppercase tracking-tight text-primary opacity-0 animate-fade-in sm:text-4xl md:text-5xl"
-          style={{ animationDelay: "0.3s", textShadow: TITLE_SHADOW }}
-        >
-          XIV Temporada
-        </p>
+          {/* SVG con los dos arcos de texto */}
+          <svg viewBox="0 0 300 290" className="w-60 sm:w-64 md:w-80" aria-hidden="true">
+            <defs>
+              <path id="hero-arc-top" d={topArc} />
+              <path id="hero-arc-bot" d={botArc} />
+            </defs>
 
-        {/* Logo (debajo de los títulos) con halo */}
-        <div className="relative my-6 flex items-center justify-center opacity-0 animate-fade-in" style={{ animationDelay: "0.42s" }}>
+            {/* CAMPAMENTOS VACACIONALES — arco superior, texto fuera del círculo */}
+            <text
+              fill="#2C5E3B"
+              fontSize={22}
+              fontFamily={"'Playfair Display', Georgia, serif"}
+              fontWeight={900}
+              letterSpacing={0.5}
+            >
+              <textPath href="#hero-arc-top" startOffset="50%" textAnchor="middle">
+                CAMPAMENTOS VACACIONALES
+              </textPath>
+            </text>
+
+            {/* XIV TEMPORADA — arco inferior, texto dentro cerca del borde */}
+            <text
+              fill="#2C5E3B"
+              fontSize={22}
+              fontFamily={"'Playfair Display', Georgia, serif"}
+              fontWeight={900}
+              letterSpacing={3}
+            >
+              <textPath href="#hero-arc-bot" startOffset="50%" textAnchor="middle">
+                XIV TEMPORADA
+              </textPath>
+            </text>
+          </svg>
+
+          {/* Halo amarillo detrás del logo */}
           <div
-            className="absolute h-[135%] w-[135%] rounded-full blur-2xl"
-            style={{ background: "radial-gradient(circle, hsl(48 90% 80% / 0.7), transparent 65%)" }}
+            className="pointer-events-none absolute h-32 w-32 rounded-full blur-xl sm:h-36 sm:w-36 md:h-44 md:w-44"
+            style={{ background: "radial-gradient(circle, hsl(48 90% 80% / 0.6), transparent 70%)" }}
+            aria-hidden="true"
           />
+
+          {/* Logo centrado sobre el SVG */}
           <img
             src={logo}
             alt="Escudo de la Pastoral Juvenil Cristo Rey"
-            className="relative w-40 drop-shadow-[0_14px_28px_hsl(138_36%_27%/0.3)] sm:w-48 md:w-56"
+            className="absolute w-28 drop-shadow-[0_10px_24px_hsl(138_36%_27%/0.28)] sm:w-32 md:w-36"
           />
         </div>
 
-        {/* Lema (igual) */}
-        <p className="font-serif text-lg italic text-primary/85 opacity-0 animate-fade-in sm:text-xl" style={{ animationDelay: "0.55s" }}>
-          “Desde el Joven, y Para el Joven”
+        {/* Lema */}
+        <p
+          className="font-serif text-lg italic text-primary/85 opacity-0 animate-fade-in sm:text-xl"
+          style={{ animationDelay: "0.55s" }}
+        >
+          "Desde el Joven, y Para el Joven"
         </p>
 
-        {/* Versículo del año (igual) */}
-        <p className="mt-3 max-w-md text-sm leading-relaxed text-foreground/70 opacity-0 animate-fade-in" style={{ animationDelay: "0.65s" }}>
-          “¡Vino a buscar y salvar lo que estaba perdido!”
+        {/* Versículo */}
+        <p
+          className="mt-3 max-w-md text-sm leading-relaxed text-foreground/70 opacity-0 animate-fade-in"
+          style={{ animationDelay: "0.65s" }}
+        >
+          "¡Vino a buscar y salvar lo que estaba perdido!"
           <span className="mt-1 block text-xs font-medium tracking-wider text-primary/70">— Lucas 19, 10</span>
         </p>
 
-        {/* CTA principal (sombra reducida) */}
+        {/* CTA */}
         <div className="relative mt-8 opacity-0 animate-fade-in" style={{ animationDelay: "0.78s" }}>
           <div className="pointer-events-none absolute -inset-1 rounded-full bg-accent/40 blur-md" aria-hidden="true" />
           <Link
