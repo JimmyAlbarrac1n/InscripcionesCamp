@@ -279,7 +279,7 @@ const Inscripcion = () => {
               {categoria && (
                 <p className="text-sm text-muted-foreground">
                   Fechas: <b className="text-foreground">{CATEGORIA_FECHAS[categoria as Categoria]}</b> · Costo:{" "}
-                  <b className="text-foreground">$45</b> · Lugar: <b className="text-foreground">Gualchán, Cantón Mira</b>
+                  <b className="text-foreground">$45</b> · Lugar: <b className="text-foreground">Gualchán, Cantón Espejo</b>
                 </p>
               )}
             </div>

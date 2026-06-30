@@ -1,4 +1,4 @@
-// Ubicación del campamento. Coordenadas reales (Gualchán, Cantón Mira) tomadas del link del usuario.
+// Ubicación del campamento. Coordenadas reales (Gualchán, Cantón Espejo) tomadas del link del usuario.
 const MAPS_EMBED = "https://maps.google.com/maps?q=0.7830627,-78.211223&z=14&output=embed";
 const WHATSAPP = `https://wa.me/593959888097?text=${encodeURIComponent(
   "Hola, quiero información sobre los Campamentos Cristo Rey 2026.",
@@ -16,7 +16,7 @@ const Ubicacion = () => {
       <div className="mx-auto max-w-5xl">
         <div className="mb-10 text-center">
           <span className="text-[11px] font-semibold uppercase tracking-[0.4em] text-primary/60">Ubicación</span>
-          <h2 className="mt-2 font-serif text-4xl font-black tracking-tight text-foreground sm:text-5xl">Gualchán, Cantón Mira</h2>
+          <h2 className="mt-2 font-serif text-4xl font-black tracking-tight text-foreground sm:text-5xl">Gualchán, Cantón Espejo</h2>
           <p className="mt-3 text-muted-foreground">Carchi, Ecuador</p>
         </div>
 
